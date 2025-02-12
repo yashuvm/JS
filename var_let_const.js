@@ -122,3 +122,174 @@ function abc() {
   abc();
 
   //a
+
+//////////////////Q-1
+{
+ x = 1;
+ console.log('inside block', x)
+}
+console.log('outside block', x)
+console.log('accessing window', window.x)
+//
+inside block, 1
+outside block, 1
+accessing window, 1
+
+
+//////////////////Q-2
+function z() {
+ x = 1;
+ console.log('inside function',x)
+}
+
+z();
+
+console.log('outside function', x)
+console.log('accessing window', window.x)
+
+inside function, 1
+outside function, 1
+accessing window, 1
+
+//////////////////Q-3
+a = 1;
+console.log(a)
+console.log(window.a)
+
+1
+1
+
+//////////////////Q-4
+const a = 1;
+const a = 2;
+
+Invalid
+
+Reason: we cannot assign a const variable after it is assigned.
+
+//////////////////Q-5
+const a;
+Invalid
+Reason: we cannot declare a const variable without assigning a value.
+
+//////////////////Q-6
+let a;
+a++;
+console.log(a)
+
+NaN
+Reason: The variable a has just been declared, but not assigned any value yet. So the value is undefined, and undefined + 1 is equal to NaN.
+
+
+//////////////////Q-7
+// FIRST
+var a;
+var a;
+
+// SECOND
+var a = 1;
+var a;
+
+// THIRD
+var a = 1;
+var a = 2;
+
+Valid
+
+Reason: The variable declared with var can be declared or assigned earlier or after. No Error in the console.
+
+//////////////////Q-8
+// FIRST
+ let a ;
+ var a ;
+
+ // SECOND
+ let a = 1;
+ var a;
+ 
+ // THIRD
+ let a = 1;
+ var a = 1;
+
+Invalid
+Error: Identifier 'a' has already been declared
+
+Reason: The variable declared with let must not be declared or assigned after with var or const. Therefore, all the above three sets of pieces of code are invalid. In the console, you will see the error
+
+//////////////////Q-9
+// FIRST 
+let a;
+let a;
+
+// SECOND
+let a = 1;
+let a;
+
+// THIRD
+ let a = 1;
+ let a = 1;
+
+Invalid
+
+Reason: The variable declared with let must not be declared or assigned after or earlier. Therefore, all the above three sets of pieces of code are invalid. In the console, you will see the error
+
+
+Error: Identifier 'a' has already been declared
+
+//////////////////Q-10
+// FIRST 
+var a;
+let a;
+
+
+// SECOND
+var a = 1;
+let a;
+
+
+// THIRD
+ var a = 1;
+ let a = 1;
+
+
+// Error: Identifier 'a' has already been declared
+Invalid
+Reason: The variable declared with let must not be declared or assigned earlier. Therefore, all the above three sets of pieces of code are invalid. In the console, you will see the error
+
+
+//////////////////Q-11
+var a = 1;
+var b = 2
+a = b;
+console.log(a);   
+console.log(b);
+
+2
+2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
