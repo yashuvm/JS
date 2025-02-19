@@ -26,6 +26,25 @@
 // }
 // displaySquare(square)
 
+//A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, 
+//a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. 
+//Assigning a function to a variable
+const foo = () => {
+  console.log("foobar");
+};
+foo(); // Invoke it using the variable
+// foobar
+
+///
+//above one is the example ....Passing a function as an argument
+//
+Returning a function
+function sayHello() {
+  return () => {
+    console.log("Hello!");
+  };
+}
+
 //Q:4 What is IIFE    //immediate invoked function
 // (function square(num) {
 //   console.log(num * num);
