@@ -88,7 +88,7 @@
 //     }
 // }
 // let user = makeUser()
-// console.log(user.ref())   //undefined
+// console.log(user.ref())   //john
 
 //////////////////////////////////////////////// Q:3
 // const user = {
