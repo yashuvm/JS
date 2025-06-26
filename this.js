@@ -74,7 +74,7 @@
 //         ref: this
 //     }
 // }
-// let user = makeUser()
+// let user = makeUser()    //when this function is call the parent function is window object 
 // console.log(user.ref.name)   //undefined
 
 
