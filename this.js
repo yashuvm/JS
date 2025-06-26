@@ -100,7 +100,7 @@
 // }
 
 // //setTimeout(user.logMessage, 1000)  //undefined  //coz this method go to the webapi and only {console.log(this.name)} is copy and when it executed then this is in the window object
-// setTimeout(function () {
+// setTimeout(function () {     //we are calling like a method inside a function //op is Piyush Aggrawal
 //     user.logMessage()
 // }, 1000) 
 
