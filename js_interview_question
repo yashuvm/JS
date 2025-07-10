@@ -1,0 +1,266 @@
+//
+Q:1 
+///input : “1,2,22,576,4,7,2,22,98,34”
+//output: “1,2,4,7,22,34,98,576”
+------------------------------------------------------------------
+function arySortRemoveDup(st) {
+let ary = st.split(",")
+//sort ary
+sortAry(ary)
+//console.log(newAry1)
+//now remove duplication
+let newAry=[]
+for(let value of ary){
+if(newAry.indexOf(value)===-1){
+newAry.push(value)
+}
+}
+//console.log(newAry)
+const newEl=newAry.join(",")
+return newEl
+}
+
+function sortAry(ary) {
+for (let i = 0; i <= ary.length - 1; i++) {
+let minIndex = i
+for (let j = i + 1; j <= ary.length - 1; j++) {
+if (parseInt(ary[j]) < parseInt(ary[minIndex])) {
+minIndex = j
+}
+}
+//swap
+const tmp=ary[i]
+ary[i]=ary[minIndex]
+ary[minIndex]=tmp
+}
+return ary
+}
+
+console.log(arySortRemoveDup("1,2,22,576,4,7,2,22,98,34"))
+
+-------------------------------------------------------------------------------
+Q:2 
+(() => {
+let x = (y = 10);
+})();
+
+console.log(typeof x); //undefined
+console.log(typeof y); //Number
+In this there is let keyword in front of x so let have block scope it can not access outside of block of typeof x is undefined and there is not keyword in front of y so y is in 
+global scope so typeof y is number
+
+------------------------------------------------------------------------------
+Q:3 
+function getInfo(member, year) {
+member.name = 'Lydia';
+year = '1998';
+}
+
+const person = { name: 'Sarah' };
+const birthYear = '1997';
+
+getInfo(person, birthYear);
+
+console.log(person, birthYear); //{name: 'Lydia'}, 1997
+
+In this when getInfo is call person is pass so there is refernce of object is passed and when we change value of member in getinfo function the by call by ref value is changed 
+in the memory address also in case of object but when we pass birhtyear then there is call by value means value is passed so in getInfo function by change year is is not changed . 
+
+---------------------------------------------------------------------------------
+Q:4 
+const firstPromise = new Promise((res, rej) => {
+setTimeout(res, 500, 'one');
+});
+
+const secondPromise = new Promise((res, rej) => {
+setTimeout(res, 100, 'two');
+});
+
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+//two
+
+In the Promise race there is race so if any of the promise is settled first then it will be come first .either is is resolve or reject
+
+
+
+----
+const firstPromise = new Promise((res, rej) => {
+setTimeout(res, 500, 'one');
+});
+
+const secondPromise = new Promise((res, rej) => {
+setTimeout(rej, 100, 'two');
+});
+
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res)).catch((err)=>{
+console.log(err)
+})
+
+if we give rej then two print in catch block .
+
+---------------------------------------------------------------------
+Q:5 
+(() => {
+let x, y;
+try {
+throw new Error();
+} catch (x) {
+(x = 1), (y = 2);
+console.log(x); //1
+}
+console.log(x); //undefined
+console.log(y); //2
+})();
+
+
+In this when function is call x and y is hosted in block scope and when throw an error then catch block there is x is passing and we change the value of x to 1 which is shadow 
+the x and in case of y we change the value of y . but outside of catch block x is still undfined because we did not change the value of x in catch block because we pass varriable 
+like x and we change value of x but in case of y we does not pass varriable so value is changed in catch of block of y . 
+
+----------------------------------------------------------------------
+Q:6 
+const obj = { 1: 'a', 2: 'b', 3: 'c' };
+const set = new Set([1, 2, 3, 4, 5]);
+
+console.log(obj.hasOwnProperty('1')); //true
+console.log(obj.hasOwnProperty(1)); //true
+console.log(set.has('1')); //false
+console.log(set.has(1)); //true
+
+obj.hasOwnProperty does not take string and number in case of number but in case of set it will check the exact type .
+
+---------------------------------------------------------------------
+Q:7 
+function getAge(...args) { [2,1]
+console.log(typeof args); //object
+}
+
+getAge(21);
+
+------------------------------------------------------------------
+Q:8 
+let greeting;
+greeting = {}; // Typo!
+console.log(greeting); {}.  
+
+first greeting is undefined but after that greeting is assign to {} object so in the console greeting is come {} object
+
+
+-----------------------------------------------------------------
+Q:9 
+let a = 3;
+let b = new Number(3);
+let c = 3;
+
+console.log(a == b); //true
+console.log(a === b); //false
+console.log(b === c); //false
+
+When we assing b to new Number then it is a special type of number so the typeof b is come object so in the first console output is true and in the second and third console output is false
+
+
+-------------------------------------------------------------------
+Q:10 
+let c = { greeting: 'Hey!' };
+let d;
+
+d = c;
+c.greeting = 'Hello';
+console.log(d.greeting);
+
+----------------------------------------------------------------
+
+Q:11 
+let c = { greeting: 'Hey!' };
+let d;
+
+d = c;
+c.greeting = 'Hello';
+console.log(d.greeting);
+
+When we equal to d==c then call by reference is passed in case of ary and object so when we change c.greeting then in the memory address the value of c object is also changed
+
+----------------------------------------------------------------
+
+Q:12 
+let number = 0;
+console.log(number++); //0 ->1
+console.log(++number); //2 ->2
+console.log(number); //2
+
+In the FIrst Console first print the number so 0 to is print then it will incremenet  -> 0 but value is 1 
+In the Second Console first it will increment the value then print the value .   -> value is 1 then increment 2 print 2 
+in thired console number is 2 
+
+----------------------------------------------------------------
+
+Q:13 
+function checkAge(data) {
+if (data === { age: 18 }) {
+console.log('You are an adult!');
+} else if (data == { age: 18 }) {
+console.log('You are still an adult.');
+} else {
+console.log(`Hmm.. You don't have an age I guess`); //. output is this 
+}
+}
+
+checkAge({ age: 18 });
+
+In this when object is pass as an argument in checkAge then in the function first if there is === so it will also check the data type with memory address so it is not print 
+in == we can not compare {} {} two object like this and in the third console is print
+
+-------------------------------------------------------------------
+
+Q:14 
+function getAge() {
+'use strict';
+age = 21;
+console.log(age);        //it gives the error age is not defined 
+}
+
+getAge();
+
+In Non strict mode js automatic assign the globale value to the age but in case of strict mode we are declare age with any var let and const so reference error is come 
+age is not defined error is come.
+
+
+---------------------------------------------------------------------
+
+Q:15 
+var name="world"
+
+const obj={
+name:"hello",
+call:()=>{
+console.log(this.name) //world
+//return true
+},
+call_:function(){
+console.log(this.name) //hello
+//return true
+}
+}
+obj.call()
+obj.call_()
+
+In the first obj.call there is normal function so in the normal function this ref is its outer parent object 
+In the second obj.call_ there is arrow function so in this function this ref to the its outer normal function 
+
+
+-----------------------------------------------------------------------
+
+Q:16 
+var hero={
+name:"Prashant",
+getName:function(){
+return this.name
+}
+}
+var stoleGetName= hero.getName;
+console.log(stoleGetName()).    //this.name is ref the the global object undefined 
+console.log(hero.getName()).   // this is ref to the current object Prashant 
+
+
+In the first console we are assign the method to the new varriable stoleGetname (it is just a function reference & it is not bound to hero object)
+So in the second console it will print because it bound the the hero object 
