@@ -38,7 +38,7 @@ foo(); // Invoke it using the variable
 ///
 //above one is the example ....Passing a function as an argument
 //
-Returning a function
+//Returning a function
 function sayHello() {
   return () => {
     console.log("Hello!");
@@ -155,7 +155,7 @@ function sayHello() {
 // fn(5, 6, 7, 8,1,2);
 
 //Q:12 callback function
-//A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
+//A callback function or callback  is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
 //example settimout map
 
 //Q: 13 Arrow function //it is introduced in es6

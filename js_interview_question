@@ -264,3 +264,126 @@ console.log(hero.getName()).   // this is ref to the current object Prashant
 
 In the first console we are assign the method to the new varriable stoleGetname (it is just a function reference & it is not bound to hero object)
 So in the second console it will print because it bound the the hero object 
+
+-----------------------------------------------------------------------
+Q: 17 
+// function show() {
+// {
+// var x = 9
+// var y = 10
+// }
+// console.log(x,y) //9,10
+// }
+show()
+//
+// function show(){
+// {
+// let x=10
+// let y=5
+// }
+// console.log(x,y) //error reference
+// }
+//wihtout using let
+function show(){
+{
+(
+function(){
+var x=10
+var y=5. //we are creating block scope here
+}
+)()
+}
+console.log(x,y).   //error
+}
+
+-----------------------------------------------------------------------
+Q:18 
+var a =[1,2,[3,4,5],6,7]
+var b= a
+a.push(8)
+console.log(a) [1, 2, [3, 4, 5], 6, 7, 8]
+
+console.log(b) [1, 2, [3, 4, 5], 6, 7, 8]
+
+var b=[...a] /shallow copy but it will copy first layer of array
+
+a[2].push(9)
+console.log(a)
+console.log(b)
+
+//for this we using the deep copy
+var b =JSON.parse(JSON.stringify(a))
+b[2].push(99)
+console.log(a)
+console.log(b)
+
+
+
+-----------------------------------------------------------------------
+Q:19
+console.log(5+ "3") //concat 53
+console.log(5 - "3") //2. type is number
+console.log(5 - -"3") // 8 type is number
+var a =5 - -"3"
+console.log(typeof a) //number
+
+
+-----------------------------------------------------------------------
+Q:20
+console.log(typeof undefined) //undefined
+console.log(typeof null) //object
+console.log(typeof NaN) //number
+console.log(typeof function(){}) //function
+console.log(typeof []) //object
+
+-----------------------------------------------------------------------
+Q:21
+NaN == NaN → false
+NaN === NaN → also false
+NaN (Not-a-Number) is not equal to anything, including itself.
+
+-----------------------------------------------------------------------
+Q:22
+let a = 0.1+0.2
+let b=0.3
+console.log(a) //0.300000000004
+console.log(b) //0.3
+//so result is false
+console.log(a==b)  //false
+console.log(a===b) //false
+
+-----------------------------------------------------------------------
+Q:23
+Truthy value 
+if (true){console.log("true")}
+if ({}){console.log("true")}
+if ([]){console.log("true")}
+if (42){console.log("true")}
+if ("0"){console.log("true")}
+if ("false"){console.log("true")}
+if (new Date()){console.log("true")}
+if (-42){console.log("true")}
+if (12n){console.log("true")}
+if (3.14){console.log("true")}
+if (-3.14){console.log("true")}
+if (Infinity){console.log("true")}
+if (-Infinity){console.log("true")}
+
+
+
+
+//Falsy value 
+if (false){console.log("false")}
+if (undefined){console.log("false")}
+if (0){console.log("false")}
+if (-0n){console.log("false")}
+if (""){console.log("false")}
+if (null){console.log("false")}
+if (NaN){console.log("false")}
+
+
+-----------------------------------------------------------------------
+Q:24
+console.log([] + []);    //empty string ""
+console.log([] + {});   // "array + object  string concat" "[object Object]"
+console.log({} + []);  //   "[object Object]"
