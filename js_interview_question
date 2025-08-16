@@ -387,3 +387,132 @@ Q:24
 console.log([] + []);    //empty string ""
 console.log([] + {});   // "array + object  string concat" "[object Object]"
 console.log({} + []);  //   "[object Object]"
+
+
+
+------------------------------------------------------------------------
+Q:25 
+//wap to print 1-> 10 and each number 1,2,3,4,5,6,7,8,9,10 
+//every print of number there is time 
+
+async function app(){
+    
+    for(let i=1;i<=10;i++){
+        const q1=await query1(i)
+    }
+    
+    
+    
+}
+app()
+function query1(i){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log(i)
+            resolve()
+        },2000)
+    })
+}
+
+-------------------------------------------------------------
+Q:26 
+//object can'nt be changed
+let a = {name:"yashu"}
+Object.freeze(a)
+a.name="world"
+console.log(a)
+
+-------------------------------------------------------------
+Q:27 
+//diff between for in and for of 
+let a=[1,2,3]
+ 
+for(let value in a){
+    console.log(a[value])    //1,2,3
+}
+for(let value of a){
+//pirnt value of array but in the use of for in  i is ary index and in object i is key 
+}
+
+------------------------------------------------------------
+Q:28 
+//o/p 
+setImmediate(() => {
+  console.log("Immediate");
+});
+ 
+setTimeout(() => {
+  console.log("Timeout");					
+}, 10);
+
+process.nextTick(() => {
+  console.log("Nexttick");
+});
+ 
+console.log("Hello");
+//hello 
+//Nexttick
+//Immediate
+//Timeout
+
+--------------------------------------------------------------
+Q:29 
+setImmediate(() => {
+  console.log("Immediate");
+});
+ 
+setTimeout(() => {
+  console.log("Timeout");					
+}, 0);
+ 
+process.nextTick(() => {
+  console.log("Nexttick");
+});
+ 
+console.log("Hello");
+
+//hello 
+//nextticket 
+//timeout
+//Immediate
+--------------------------------------------------------------
+Q:30 
+function abc(){
+    console.log(this)
+}
+abc()
+let b=()=>{
+    console.log(this)
+}
+b()
+//in both output is window or global object 
+----------------------------------------------------------
+Q:31 
+let a = [1,2,3]
+a.length=100   //the the ary value is empty after 2 index 
+console.log(a[4])  //but if we call any value then it will be undefined 
+
+------------------------------------------------------------
+Q:32 
+const p1=new Promise((resolve, reject) => {
+    console.log("1 - Hello");
+    resolve(); // Fulfill the promise
+}).then(() => {
+    console.log("2 - called");
+});
+
+ async function testAsync() {
+   console.log("3 - Hi");  
+   await null; 
+   console.log("4 - bye"); 
+} 
+testAsync();
+
+//first promise run immedailty and hello is print after it resolve then in the then cb goes to the microtask queue 
+// then async fnx is run and print hi then await is go to the micro task queue then in the microtask queue called is pirnt 
+// then bye is print 
+----------------------------------------------------------------
+Q:33
+EVENT LOOP IN JS AND MICROTASK QUEUE (PROMICES QUEUE) AND MACROTASK QUEUE (TIMER ,CALLBACK)
+
+
