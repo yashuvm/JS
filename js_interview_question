@@ -514,5 +514,28 @@ testAsync();
 ----------------------------------------------------------------
 Q:33
 EVENT LOOP IN JS AND MICROTASK QUEUE (PROMICES QUEUE) AND MACROTASK QUEUE (TIMER ,CALLBACK)
+setTimeout(()=>console.log("First"),0)
+setTimeout(()=>console.log("Second"),0)
+setTimeout(()=>Promise.resolve("First from microtask").then((val)=>{
+    console.log(val)
+}),0)
+setTimeout(()=>Promise.resolve("Second from microtask").then((val)=>{
+    console.log(val)
+}),0)
+setTimeout(()=>setTimeout(()=>Promise.resolve("Second nested from microtask").then((val)=>{
+    console.log(val)
+}),
+0,0))
+
+task queue (callback queue)['First','Second','Promise.resolve("First from microtask")','Promise.resolve("Second from microtask")'
+    'setTimeout(()=>Promise.resolve("Second nested from microtask")'
 
 
+]
+microtask queue []
+//
+First 
+Second
+First from microtask
+Second from microtask
+Second nested from microtask
