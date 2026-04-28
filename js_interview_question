@@ -556,3 +556,42 @@ setTimeout(()=>console.log("t2"),0)
 setTimeout(()=>console.log("t3"),0)
 //in call back it check one cycle of event loop and second cb to the next cycle 
 // but in the microtask queue if two callback then in one cycle first cb executed and same cycle second cb is executed 
+
+Q:35
+function schedule1(){
+Promise.resolve().then(()=>console.log("#1 m1"))
+Promise.resolve().then(()=>console.log("#1 m2"))
+setTimeout(()=>console.log("t1"),0)
+setTimeout(()=>{
+    Promise.resolve().then(()=>console.log("#1 m3"))
+    Promise.resolve().then(()=>console.log("#1 m4"))
+    Promise.resolve().then(()=>console.log("#1 m5"))
+    // Promise.resolve().then(()=>Promise.resolve(()=>{
+    //     console.log("m6")
+    // })
+})
+setTimeout(()=>console.log("#1 t2"),0)
+setTimeout(()=>console.log("#1 t3"),0)
+console.log('hello from the main thread')
+}
+schedule1()
+schedule2()
+
+function schedule2(){
+Promise.resolve().then(()=>console.log("#2 m1"))
+Promise.resolve().then(()=>console.log("#2 m2"))
+setTimeout(()=>console.log("t1"),0)
+setTimeout(()=>{
+    Promise.resolve().then(()=>console.log("#2 m3"))
+    Promise.resolve().then(()=>console.log("#2 m4"))
+    Promise.resolve().then(()=>console.log("#2 m5"))
+    // Promise.resolve().then(()=>Promise.resolve(()=>{
+    //     console.log("m6")
+    // })
+})
+setTimeout(()=>console.log("#2 t2"),0)
+setTimeout(()=>console.log("#2 t3"),0)
+console.log('hello from the main thread ..')
+}
+
+
