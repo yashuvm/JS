@@ -384,9 +384,9 @@ if (NaN){console.log("false")}
 
 -----------------------------------------------------------------------
 Q:24
-console.log([] + []);    //empty string ""
-console.log([] + {});   // "array + object  string concat" "[object Object]"
-console.log({} + []);  //   "[object Object]"
+console.log([] + []);   //array are converted into string -> "" + "" -> "" -> empty string   
+console.log([] + {});   //  "" + "[object Oject]" -> "[object Object]"  "array + object  string concat" "[object Object]"
+console.log({} + []);  //   //this depent how js interpret it-> {} + [] -> {} js treated like block not object -> so it become -> + "" o/p +"" -> 0  if forced expression (({}+[])) "[object Object]"  //  "[object Object]"
 
 
 
