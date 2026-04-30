@@ -433,6 +433,8 @@ for(let value in a){
 for(let value of a){
 //pirnt value of array but in the use of for in  i is ary index and in object i is key 
 }
+//for in is iteraret over the keys and indexs 
+for of iterate over the value 
 
 ------------------------------------------------------------
 Q:28 
