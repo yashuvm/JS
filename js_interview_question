@@ -543,19 +543,24 @@ microtask queue []
 // Second nested from microtask
 
 Q:34 
-Promise.resolve().then(()=>console.log("m1"))
-Promise.resolve().then(()=>console.log("m2"))
-setTimeout(()=>console.log("t1"),0)
-setTimeout(()=>{
-    Promise.resolve().then(()=>console.log("m3"))
-    Promise.resolve().then(()=>console.log("m4"))
-    Promise.resolve().then(()=>console.log("m5"))
-    Promise.resolve().then(()=>Promise.resolve(()=>{
-        console.log("m6")
-    })
-})
-setTimeout(()=>console.log("t2"),0)
-setTimeout(()=>console.log("t3"),0)
+Promise.resolve().then(() => console.log("m1"));
+Promise.resolve().then(() => console.log("m2"));
+
+setTimeout(() => console.log("t1"), 0);
+
+setTimeout(() => {
+    Promise.resolve().then(() => console.log("m3"));
+    Promise.resolve().then(() => console.log("m4"));
+    Promise.resolve().then(() => console.log("m5"));
+    Promise.resolve().then(() => 
+        Promise.resolve().then(() => {
+            console.log("m6");
+        })
+    );
+}, 0);
+
+setTimeout(() => console.log("t2"), 0);
+setTimeout(() => console.log("t3"), 0);
 //in call back it check one cycle of event loop and second cb to the next cycle 
 // but in the microtask queue if two callback then in one cycle first cb executed and same cycle second cb is executed 
 
