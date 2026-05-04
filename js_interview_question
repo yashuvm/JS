@@ -515,6 +515,7 @@ testAsync();
 // then bye is print 
 ----------------------------------------------------------------
 Q:33
+/////////////////////////////////
 EVENT LOOP IN JS AND MICROTASK QUEUE (PROMICES QUEUE) AND MACROTASK QUEUE (TIMER ,CALLBACK)
 task queue -> it first check this next cb in the next iteration of the event loop
 microtask queue -> keep checking in the microtask queue 
