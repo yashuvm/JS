@@ -516,6 +516,9 @@ testAsync();
 ----------------------------------------------------------------
 Q:33
 EVENT LOOP IN JS AND MICROTASK QUEUE (PROMICES QUEUE) AND MACROTASK QUEUE (TIMER ,CALLBACK)
+task queue -> it first check this next cb in the next iteration of the event loop
+microtask queue -> keep checking in the microtask queue 
+
 setTimeout(()=>console.log("First"),0)
 setTimeout(()=>console.log("Second"),0)
 setTimeout(()=>Promise.resolve("First from microtask").then((val)=>{
