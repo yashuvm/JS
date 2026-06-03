@@ -55,4 +55,48 @@ Q: 10
 console.log(3 + 4 + '5') 
 //in js addition is left to right 
 // 3 + 4 -> 7 and 7 convert into number due to type coresion 7+5 -> 75
-//17
+
+
+Q: 11
+let newList=[1].push(2) //when we use .push method in ary it will not return a new array it will return lenght of new array -> 2 
+console.log(newList.push(3)) //-> 2.push(3) it gives an type error (not use .push on numeric value)
+
+Q: 12
+var employeeId='abc'
+
+function foo(){
+    employeeId='123'
+    return 
+    function employeeid(){}
+}
+foo()
+console.log(employeeId) //employeeId is chanages the value of employee id from the global scope //123
+
+
+Q: 13
+const arr1=[1,2,3]
+const str='1,2,3'
+console.log(arr1==str)
+//in js loss equality operator are used value of two differnt type -> js convert (common type) -> to make comparison -> 
+//lossy operator between array and string js internally uses array.prototype.toString() -> convert array into string 
+//'1,2,3' == '1,2,3'-> true
+
+Q: 14
+let a = 5 
+let b = a++ //value of a return to b and then increment then it is 6 
+console.log(a+b) //11
+
+Q: 15
+var x=1 
+console.log(x)
+
+function x(){
+    console.log("2")
+}
+x() 
+//type error due to hoisting 
+// in hoisting function declartion more prioriry then var declation 
+//initally function x is hoisting -> then var declarition will be hoisting -> now it override function declartion -> which is hoisted 
+//line x is hosting and value is 1 
+//but when x is call then x is not function it is numeric value due to this it gives type error x is not a function 
+//366666
