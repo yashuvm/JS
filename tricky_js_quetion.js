@@ -99,4 +99,212 @@ x()
 //initally function x is hoisting -> then var declarition will be hoisting -> now it override function declartion -> which is hoisted 
 //line x is hosting and value is 1 
 //but when x is call then x is not function it is numeric value due to this it gives type error x is not a function 
-//366666
+
+
+Q: 16
+function sum(a=5,b=7){
+  console.log(a+b)
+}
+sum(null,20) //20
+sum(undefined,20)//25
+//if no value or undefined value -> then a=5 
+//we are giving null so in js type coresion null -> 0 -> 0+20 => 20
+
+Q: 17
+const arr1=[1,2,3]
+const arr2=arr1.slice() //return new array not modify cuurent array //splice modify the ary
+arr2[0]=0
+console.log(arr1) //[1,2,3]
+
+Q: 18
+let obj={name:"Shyam"} //object have value 
+const newNum=[obj] //newNum have reference of obj
+obj=null //variable obj assign null but newNum still obj reference original
+console.log(obj) //null
+console.log(newNum) //{name:"Shyam"}
+
+
+Q: 19
+const box={
+  x:5,y:10
+}
+Object.freeze(box)
+box.x=10
+console.log(box)
+//value is box object is not changed
+
+Q: 20
+new Promise(()=>{
+  console.log("d") //not using resolve or reject js code run sync code there is no resolve reject so sync code run
+})
+console.log("s")
+//ds
+
+Q: 21
+const arr1=[1,2,[3,4]]
+const arr2=[...arr1] //shallow copy copy the privitve value but for non premitve copy ref so when we use arr1[2][0] referce is change so value is also changed
+//shallow copy copy the first layer 
+arr1[0]=12
+arr1[2][0]=100
+console.log(arr2) //[1, 2, [100, 4]]
+
+Q: 22
+let st='sai'
+st.length=0 
+console.log(st) //sai 
+//string are immutable not able to change also properties is also not able to changed
+
+Q: 23
+x++
+console.log(x) //NaN
+var x=10
+
+Q: 24
+function hello() {
+  let a = (b = 10) //in js if not var let const then js assign var in global object
+}
+hello()
+console.log(b) //10
+
+Q: 25
+const data={
+  "a":1
+}
+data.a=2 //modify the properties of object but not reassign 
+console.log(data.a) //2
+
+Q: 26
+const x=[1,2,3]
+delete x[0] //it will delete the ary element and assign empty value so length is same
+console.log(x.length)
+console.log(x)
+
+Q: 27
+(function sum(num){
+  console.log(num*num) //0
+})(false)
+
+Q: 28
+let learn='Learn'
+console.log(learn.substring(5,1))
+//in js substring start index and end index and give that value
+//but if start index > last index then value is swap so start is 1 and end is 5 
+//earn
+
+Q: 29
+let ary=[]
+let value=false 
+console.log(ary==value) //loose type operator convert two different data type into  into common value [ ] -> 0 and false -> 0 
+///true
+
+Q: 30
+const data = {
+  a: ' sai',
+  a:'krishna'
+}
+console.log(data.a)
+
+Q: 31
+let a =[1]
+let b=[2]
+console.log(a+b) //use + in ary js use ary.toString() -> "1" + "2" -> 12
+
+Q: 32
+let time=setTimeout(()=>{
+  console.log("value")
+},0)
+
+clearInterval(time) //not log anything
+
+Q: 33
+var a = 1
+let b = 2
+{
+  var a = 10
+  let b = 12
+}
+console.log(a, b)
+//init -> a is globale and b is block 
+//in block a is function scope and ovverride the value a but in b let is block scope 
+
+
+Q: 34
+let arr1=[1,2]
+let arr2=arr1.reverse()
+console.log(arr1,arr2) //[2,1] [1,2]
+//reverse() modifies the original array and also returns the same array reference
+
+Q: 35
+let x=1
+let y=2
+console.log(x++ + ++y) //4 postfix return 1 then ++ -> 1+ (++2) -> 1+3 -> 4
+
+
+Q: 36
+//let x
+//
+let x = {
+  flag: 1,
+  toString: function () {
+    return this.flag++
+  },
+}
+
+//
+if (x == 1 && x == 2 && x == 3) {
+  console.log('hello')
+}
+//== operator js convert the non pretive type to .toString() 
+//intitally if x==1 it return this.flag -> 1 which increment later 
+//x ==2 this.flag -> 2 
+// if x =2 this.flag -> 3 
+
+
+Q: 37
+let name={name:"hello"}
+let value=["name"]
+name[value]="world" //in key js use .toString() -> name[["name"].toString()] -> name["name"]
+console.log(name.name) //world
+
+Q: 38
+console.log([]==[])//false -> in js == ary created by reference == comapre reference but in the memeory locaton value is different 
+
+Q: 39
+let x=[]
+x[4]=1
+console.log(x)
+x.forEach((i)=>{
+  console.log("hello")
+})
+//it print only once 
+//x [undefined,undefined,undefined,undefined,4]
+//but forEach run only or iterate only defined value so print only hello once 
+//in this undeined is not assing on 0,1,2,3 index its have empty value
+
+
+const a=[undefined,undefined,1]
+a.forEach((i)=>{
+  console.log("a") //run becuase undefined is exit on index
+})
+//a,a,a
+
+
+Q: 40
+x++ 
+console.log(x) //NaN
+var x=20
+
+//71
+
+
+
+
+
+
+
+
+
+
+
+
+
