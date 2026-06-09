@@ -123,7 +123,7 @@
 // console.log("end");
 
 ////////----------------------------------------------------------------
-//promise->state(pending,resovle,reject)
+//promise->state(pending,fulfiled,reject)
 //console.log("start");
 function importantAction(username) {
   return new Promise((resolve, reject) => {
