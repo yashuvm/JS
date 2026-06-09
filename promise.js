@@ -428,8 +428,9 @@ promise
 //   .catch(function (err) {                   
 //     console.log("Error", data.message);
 //   });
-
-
+//When ever it thow then it goes only catch block 
+throw -> catch 
+reject -> catch 
 //Q:8 
 const firstPromise=new Promise((resolve,reject)=>{
     resolve("first")
