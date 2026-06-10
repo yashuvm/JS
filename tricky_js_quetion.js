@@ -294,17 +294,87 @@ x++
 console.log(x) //NaN
 var x=20
 
-//71
 
 
+Q: 41
+const name="hello"
+age=15
+console.log(delete name) //delete gives false
+console.log(delete age) //age is globale object so it gives true
+//delete operator in js delete property in object 
+console.log(age) //age is not defined
+
+Q: 42
+let a =[1]
+let b=[2]
+console.log(a+b)
+//+ ->js convert array -> arry.toString() 1+2 -> 12
 
 
+Q: 43
+console.log([1,2] + ![]) //1,2false
+//[]=> true 
+//![] -> !true -> false
+
+Q: 44
+let x=1
+let y=2
+console.log(x++ + ++y) 
+//x++ -> postfile return value then increment
+//++ -> increment then return 
+
+Q: 45
+let st='hello'
+st.length=0
+console.log(st.length) //string are immutable in js
+
+Q: 46
+let obj={hello:"one"}
+let obj_=obj
+obj_={}
+console.log(obj) 
+//in js object reference is passed but when we assign empty object {} -> it take new memeory in the system if we reassign then it is not assign new memeory system
 
 
+Q: 47
+const st = 'abc' + +"def"
+//+def + is uniary convert into number -> try convert string to number is is not right => NaN
+console.log(st) //abcNaN
 
+Q: 48
+let st="Change"
+let value=st.replace("C","R") //replace give new value copy preious and return new
+console.log(value) //Rhange
+console.log(st) //Change
 
+Q: 49
+let a = true
+let b = true
+let c = false
+console.log(a && b || c)
+//in js && operator is more preciency a && b -> true 
+//true || false -> true
 
+Q: 50
+console.log(2 + '3' + 4)
+//in js + operator use -> it convert string value to numeric value -> "23" -> 4 -> 234 
 
+Q: 51
+let {length}="hello"
+console.log(length)
+//in js {length} -> of string hello -> it converted into object -> and in the object 
+//property object length it 5 
 
+Q: 52
+x=1 
+console.log(x)
+var x
+console.log(x)
+//hosting x is hosted 
+// x : udnefined 
+//when. code run it assign x => 1 
+//after pointer move line 3 value still 1 so in the console it gives 1
+
+//112
 
 
