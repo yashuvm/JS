@@ -196,6 +196,8 @@ let ary=[]
 let value=false 
 console.log(ary==value) //loose type operator convert two different data type into  into common value [ ] -> 0 and false -> 0 
 ///true
+[].toString() → ""  -> 0 -> 0==0 -> true
+
 
 Q: 30
 const data = {
