@@ -385,8 +385,21 @@ a[b]='hello'
 a[c]='world'
 console.log(a[b])
 
-
-
+Q:54
+console.log(1);
+setTimeout(() => console.log(2));
+Promise.resolve().then(() => {
+    console.log(3);
+    return Promise.resolve(4);
+}).then(console.log);
+queueMicrotask(() => console.log(5));
+console.log(6);
+1
+6
+3
+5
+4
+2
 
 //112
 
