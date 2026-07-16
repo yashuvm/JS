@@ -377,6 +377,17 @@ console.log(x)
 //when. code run it assign x => 1 
 //after pointer move line 3 value still 1 so in the console it gives 1
 
+Q:53
+const a ={}
+const b={x:1}
+const c ={y:2}
+a[b]='hello'
+a[c]='world'
+console.log(a[b])
+
+
+
+
 //112
 
 
