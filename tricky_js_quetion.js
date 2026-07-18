@@ -260,7 +260,7 @@ if (x == 1 && x == 2 && x == 3) {
 //intitally if x==1 it return this.flag -> 1 which increment later 
 //x ==2 this.flag -> 2 
 // if x =2 this.flag -> 3 
-
+//x is object -> we comapre object to number -> it try to convert object to primitve like toString() -> it increment the flag
 
 Q: 37
 let name={name:"hello"}
