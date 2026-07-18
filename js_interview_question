@@ -605,4 +605,20 @@ setTimeout(()=>console.log("#2 t3"),0)
 console.log('hello from the main thread ..')
 }
 
+Q:36
+Array methods that change the original array (remember this list)
+push
+pop
+shift
+unshift
+splice
+sort
+reverse
+fill
+copyWithin
+Everything else generally returns a new array or value.
+
+String methods
+None.
+Strings are immutable, so every operation returns a new string.
 
