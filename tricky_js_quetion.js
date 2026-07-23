@@ -311,6 +311,21 @@ let a =[1]
 let b=[2]
 console.log(a+b)
 //+ ->js convert array -> arry.toString() 1+2 -> 12
+Interview Rule to Remember
+
+When + is used with objects or arrays:
+
+Convert the object to a primitive (valueOf() → toString()).
+If either operand becomes a string, + performs string concatenation.
+Otherwise, it performs numeric addition.
+
+This is why:
+
+[1] + [2]      // "12"
+[1] + 2        // "12"
+1 + [2]        // "12"
+[1,2] + [3,4]  // "1,23,4"
+
 
 
 Q: 43
