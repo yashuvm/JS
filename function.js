@@ -28,6 +28,11 @@
 
 //A programming language is said to have First-class functions when functions in that language are treated like any other variable. For example, in such a language, 
 //a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable. 
+
+A first-class function means functions are treated like any other value in JavaScript.
+They can be assigned to variables, passed as arguments, returned from other functions, and stored in objects or arrays
+
+
 //Assigning a function to a variable
 const foo = () => {
   console.log("foobar");
