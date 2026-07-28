@@ -382,6 +382,22 @@ console.log(length)
 //in js {length} -> of string hello -> it converted into object -> and in the object 
 //property object length it 5 
 
+In JavaScript, when you use object destructuring on a primitive like a string:
+let { length } = "hello";
+JavaScript automatically wraps the string in a temporary String object (called autoboxing).
+Internally, it's similar to:
+let temp = new String("hello");
+let { length } = temp;
+console.log(length); // 5
+Since String objects have a length property, destructuring extracts that property.
+Another example
+let { toUpperCase } = "hello";
+console.log(toUpperCase()); // HELLO
+Here, toUpperCase is a method of the temporary String object.
+
+
+
+
 Q: 52
 x=1 
 console.log(x)
