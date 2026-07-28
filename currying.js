@@ -44,10 +44,10 @@
 //   };
 // }
 
-// // console.log(evaluate("sum")(4)(2))
-// // console.log(evaluate("multiple")(4)(2))
-// // console.log(evaluate("divide")(4)(2))
-// // console.log(evaluate("subtract")(4)(2))
+console.log(evaluate("sum")(4)(2));
+console.log(evaluate("multiple")(4)(2));
+console.log(evaluate("divide")(4)(2));
+console.log(evaluate("subtract")(4)(2));
 
 // const mul=evaluate("multiple")
 // console.log(mul(3)(5))   //15
