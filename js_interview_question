@@ -622,3 +622,24 @@ String methods
 None.
 Strings are immutable, so every operation returns a new string.
 
+
+Don't think:
+
+[] = false
+
+That's WRONG.
+
+These are completely different concepts:
+
+Boolean([])
+// true
+
+But:
+
+Number([])
+// 0
+
+And:
+
+String([])
+// ""
