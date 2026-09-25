@@ -258,8 +258,8 @@ return this.name
 }
 }
 var stoleGetName= hero.getName;
-console.log(stoleGetName()).    //this.name is ref the the global object undefined 
-console.log(hero.getName()).   // this is ref to the current object Prashant 
+console.log(stoleGetName())    //this.name is ref the the global object undefined 
+console.log(hero.getName())   // this is ref to the current object Prashant 
 
 
 In the first console we are assign the method to the new varriable stoleGetname (it is just a function reference & it is not bound to hero object)
